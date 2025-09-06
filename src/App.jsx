@@ -24,9 +24,9 @@ function App() {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf"; // adjust to "/repo-name/resume.pdf" if deployed under subfolder
-    link.download = "swetkylah_Resume.pdf"; // filename for downloaded file
-    document.body.appendChild(link); // Required for Firefox
+    link.href = "/kylah.github.io/resume.pdf"; // include repo name here!
+    link.download = "swetkylah_Resume.pdf";
+    document.body.appendChild(link); // for Firefox
     link.click();
     document.body.removeChild(link);
   };
