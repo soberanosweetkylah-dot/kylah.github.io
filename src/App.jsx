@@ -22,14 +22,15 @@ function App() {
     },
   ]);
 
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf"; // Make sure resume.pdf is in public folder
-    link.download = "swoberno_sweetkylah.pdf"; // Custom filename
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const handleDownloadResume = () => {
+  const link = document.createElement("a");
+  link.href = "/resume.pdf"; // path to your resume file in public folder
+  link.download = "swetkylah_Resume.pdf"; // the filename to save as
+  document.body.appendChild(link); // needed for Firefox
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   return (
     <>
@@ -47,7 +48,7 @@ function App() {
             Feeding in Tilapia Fishponds to support local farmers. I’m driven to
             create solutions that are not only functional but also impactful.
           </p>
-          <button onClick={downloadResume}>Download Resume</button>
+          <button onClick={handleDownloadResume}>Download Resume</button>
         </div>
         <div className="profile">
           <img src={profile} alt="Profile" />
