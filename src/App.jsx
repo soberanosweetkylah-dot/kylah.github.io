@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import profile from "./assets/kylah_profile.jpg";
 import KudoFitnessGym from "./assets/KudoFitnessGymApp.png";
@@ -22,6 +22,15 @@ function App() {
     },
   ]);
 
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/resume.pdf"; // Make sure resume.pdf is in public folder
+    link.download = "swoberno_sweetkylah.pdf"; // Custom filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div id="intro">
@@ -38,7 +47,7 @@ function App() {
             Feeding in Tilapia Fishponds to support local farmers. I’m driven to
             create solutions that are not only functional but also impactful.
           </p>
-          <button>Download Resume</button>
+          <button onClick={downloadResume}>Download Resume</button>
         </div>
         <div className="profile">
           <img src={profile} alt="Profile" />
@@ -87,7 +96,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              github.com/yourusername
+              github.com/soberanosweetkylah-dot
             </a>
           </div>
         </div>
